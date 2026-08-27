@@ -57,6 +57,14 @@ No real testimonials, case studies, certifications, or company registration data
 4. One clear H1 and CTA hierarchy; never make the visitor think or scroll to find the phone number.
 5. SEO structure (schema, headings, meta) is as load-bearing as the visual design — this site's job is to rank, then convert.
 
+## Reusable Base
+
+This site is the template for the next rank & rent niche sites (electricista, fisioterapeuta, …). To retheme: swap the CSS custom properties in `styles.css` (`--navy-*`, `--orange-*`), swap the icon set (currently plumbing-themed: droplet, wrench), and rewrite the copy/FAQ/schema per niche. Layout, reveal-on-scroll, floating CTA bar, and the hero visual/canvas system are niche-agnostic and meant to carry over unchanged.
+
+## SEO Strategy
+
+Primary keyword: "fontanero urgente Valencia". Supporting long-tail variants worked into copy and the FAQ section (not stuffed): "fontanero 24 horas Valencia", "fontanero económico Valencia", "desatascos Valencia". Technical SEO: `robots.txt` + `sitemap.xml`, `Plumber` LocalBusiness schema, `FAQPage` schema (targets "People Also Ask" / rich results for the FAQ questions), single H1, one H2 per section.
+
 ## Accessibility & Inclusion
 
 No specific standard mandated by the user; apply baseline good practice (tap target sizes ≥44px for CTAs, sufficient color contrast for the orange/blue palette, semantic HTML) since a meaningful share of visitors will be stressed/rushed mobile users.
