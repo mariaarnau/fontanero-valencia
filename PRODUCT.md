@@ -57,6 +57,14 @@ No real testimonials, case studies, certifications, or company registration data
 4. One clear H1 and CTA hierarchy; never make the visitor think or scroll to find the phone number.
 5. SEO structure (schema, headings, meta) is as load-bearing as the visual design — this site's job is to rank, then convert.
 
+## Site Map (as of this build)
+
+`index.html` (home) + 3 service pages (`desatascos-valencia.html`, `averias-fugas-valencia.html`, `instalaciones-fontaneria-valencia.html`) + 12 barrio pages (one per `areaServed` neighborhood, each with genuinely differentiated local content — not a templated find/replace — plus its own `Plumber`+`BreadcrumbList` schema) + 3 legal pages (`aviso-legal.html`, `privacidad.html`, `cookies.html`). All cross-linked from the home services grid, coverage list, header nav, and footer. `sitemap.xml` lists all 19 URLs.
+
+**Before this goes live:** `aviso-legal.html` and `privacidad.html` have bracketed placeholders (`[Nombre completo o razón social]`, `[NIF/CIF]`, `[Dirección completa]`, `[Email de contacto]`) — publishing fabricated legal-identity data would be a real LSSI/RGPD problem, so these were deliberately left for the site owner to fill in with real data, not invented. `cookies.html` currently states no analytics cookies are set; if/when GA4 is wired in, a cookie-consent banner is required before that tag fires (not yet built) and `cookies.html` needs its cookie table filled in.
+
+The lead-click tracking scaffold (`script.js`) pushes `lead_click` events to `window.dataLayer` on every call/WhatsApp tap already, tagged by placement (`header`, `hero`, `subpage_hero`, `final_cta`, `floating_bar`) — ready to feed GA4/GTM the moment a property exists.
+
 ## Reusable Base
 
 This site is the template for the next rank & rent niche sites (electricista, fisioterapeuta, …). To retheme: swap the CSS custom properties in `styles.css` (`--navy-*`, `--orange-*`), swap the icon set (currently plumbing-themed: droplet, wrench), and rewrite the copy/FAQ/schema per niche. Layout, reveal-on-scroll, floating CTA bar, and the hero visual/canvas system are niche-agnostic and meant to carry over unchanged.

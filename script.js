@@ -6,6 +6,22 @@
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // --- Lead-click tracking (call / WhatsApp) --------------------------
+  // Provider-agnostic: pushes to window.dataLayer (GTM/GA4-ready) without
+  // requiring a tracking account to exist yet. Wire a GA4/GTM snippet in
+  // <head> later and these events start flowing with no code changes here.
+  window.dataLayer = window.dataLayer || [];
+  document.querySelectorAll('a[href^="tel:"], a[href^="https://wa.me/"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      const isWhatsapp = link.href.startsWith("https://wa.me/");
+      window.dataLayer.push({
+        event: "lead_click",
+        lead_channel: isWhatsapp ? "whatsapp" : "call",
+        lead_placement: link.closest("[data-cta-zone]")?.dataset.ctaZone || "content",
+      });
+    });
+  });
+
   // --- Scroll reveal -------------------------------------------------
   const revealTargets = document.querySelectorAll(
     ".service-photo-card, .why__list li, .testimonial-card, .coverage__list li, .faq__item, .section__head"
