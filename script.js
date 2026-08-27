@@ -111,30 +111,4 @@
     });
     raf = requestAnimationFrame(tick);
   }
-
-  // --- Hero visual tilt (desktop pointer only) ------------------------
-  // Tilts the whole container (not the individually-animated layers) so
-  // the pointer-driven rotate never fights each layer's own CSS float
-  // keyframes for the `transform` property.
-  const visual = document.querySelector(".hero__visual");
-  if (
-    visual &&
-    !prefersReducedMotion &&
-    window.matchMedia("(hover: hover) and (pointer: fine)").matches
-  ) {
-    let raf = null;
-    visual.addEventListener("pointermove", (e) => {
-      const rect = visual.getBoundingClientRect();
-      const px = (e.clientX - rect.left) / rect.width - 0.5;
-      const py = (e.clientY - rect.top) / rect.height - 0.5;
-      if (raf) return;
-      raf = requestAnimationFrame(() => {
-        visual.style.transform = `rotateX(${py * -8}deg) rotateY(${px * 10}deg)`;
-        raf = null;
-      });
-    });
-    visual.addEventListener("pointerleave", () => {
-      visual.style.transform = "";
-    });
-  }
 })();

@@ -65,6 +65,8 @@ No real testimonials, case studies, certifications, or company registration data
 
 The lead-click tracking scaffold (`script.js`) pushes `lead_click` events to `window.dataLayer` on every call/WhatsApp tap already, tagged by placement (`header`, `hero`, `subpage_hero`, `final_cta`, `floating_bar`) — ready to feed GA4/GTM the moment a property exists.
 
+**Photos:** user explicitly wants real photos of people doing the work (hero + the 4 service-card slots: urgencias/averías/desatascos/instalaciones), not stock or illustration. This execution environment's network policy blocks all external image hosts (confirmed against Unsplash, Pexels, Pixabay, picsum.photos, Google — all 403 at the proxy), so photos cannot be fetched by the assistant; they must come from the user (pasted/uploaded in chat) or be added directly to the repo by the site owner. Until real photos exist, `.hero__photo` is a neutral CSS gradient placeholder (no image) and the 4 service cards keep hand-authored on-brand SVG line-art illustrations (`.service-illustration`) as a non-empty placeholder — swap both for `<img>` the moment real photos land.
+
 ## Reusable Base
 
 This site is the template for the next rank & rent niche sites (electricista, fisioterapeuta, …). To retheme: swap the CSS custom properties in `styles.css` (`--navy-*`, `--orange-*`), swap the icon set (currently plumbing-themed: droplet, wrench), and rewrite the copy/FAQ/schema per niche. Layout, reveal-on-scroll, floating CTA bar, and the hero visual/canvas system are niche-agnostic and meant to carry over unchanged.

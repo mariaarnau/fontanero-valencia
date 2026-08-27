@@ -160,9 +160,9 @@ Two-letter initials in a solid circle (navy or orange, alternating), never a pho
 ### Testimonials
 - Off-white card, 16px radius, 1px border, star rating drawn as five inline SVG stars (never Unicode glyphs), quote in ink, name + neighborhood in muted caption below.
 
-## Hero Visual (signature differentiator)
+## Hero Background
 
-Desktop-only (≥960px) layered "3D-lite" badge to the right of the hero copy: a soft orange orb, a floating navy circle carrying the primary service icon, and small pill "chips" (response time, guarantee) plus an icon-only accent circle — all with independent idle float keyframes, and the whole container tilts on `rotateX`/`rotateY` toward the pointer (desktop pointer only, disabled under `prefers-reduced-motion`). This reads as an animated 3D scene without any WebGL/model asset weight: it's div/SVG layers, ~1.5KB of extra CSS and JS. Behind the full hero (all breakpoints) a lightweight canvas draws 12–22 slow-falling translucent orange droplets — capped particle count, paused on `visibilitychange`, skipped entirely under reduced motion. This pairing is the reusable "premium but fast" differentiator for future niche sites: swap the badge icon and chip copy per niche, keep the mechanism.
+Single centered column (matches the original brief-pinned layout). The hero photo slot (`.hero__photo`) currently holds a subtle navy gradient + faint dot texture as a neutral placeholder — reserved for a real photo of the plumber at work once one is available; swap it back to an `<img>` with `object-fit: cover` the moment a real photo exists. A lightweight canvas (`#heroCanvas`) draws 12–22 slow-falling translucent orange droplets behind the text on every breakpoint — capped particle count, paused on `visibilitychange`, skipped entirely under `prefers-reduced-motion`. An earlier version of this hero also included a floating layered "3D-tilt" badge to the right of the copy; it was tried, reviewed, and removed — it read as decoration rather than trust, and this system prioritizes real trust signals (photos, reviews, guarantees) over ornamental motion.
 
 ## Do's and Don'ts
 

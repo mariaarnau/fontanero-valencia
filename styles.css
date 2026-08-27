@@ -341,14 +341,6 @@ main > section {
   height: 100%;
   pointer-events: none;
 }
-.hero__grid {
-  position: relative;
-  max-width: var(--container);
-  margin: 0 auto;
-  display: grid;
-  gap: 2.5rem;
-  align-items: center;
-}
 .hero__inner {
   position: relative;
   max-width: 760px;
@@ -387,106 +379,6 @@ main > section {
   gap: 0.4rem;
 }
 .hero__badges svg { width: 16px; height: 16px; color: var(--orange-500); }
-
-/* ============================================================
-   Hero visual — layered 3D-tilt badge (desktop only)
-   ============================================================ */
-
-.hero__visual {
-  display: none;
-  position: relative;
-  height: 380px;
-  perspective: 900px;
-  transform-style: preserve-3d;
-  transition: transform 260ms var(--ease-out);
-}
-@media (min-width: 960px) {
-  .hero__grid { grid-template-columns: 1.15fr 0.85fr; text-align: left; }
-  .hero__inner { text-align: left; justify-items: start; margin: 0; }
-  .hero__cta, .hero__badges { justify-content: flex-start; }
-  .hero__visual { display: block; }
-}
-
-.hero__orb {
-  position: absolute;
-  inset: 8% 4%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 32% 28%, rgba(249, 115, 22, 0.35), rgba(249, 115, 22, 0.04) 62%);
-  filter: blur(2px);
-  animation: orb-float 7s var(--ease-in-out) infinite;
-  transition: transform 120ms var(--ease-out);
-}
-.hero__badge {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 128px;
-  height: 128px;
-  margin: -64px 0 0 -64px;
-  border-radius: 50%;
-  background: linear-gradient(155deg, var(--navy-700), var(--navy-900));
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255, 255, 255, 0.16);
-  display: grid;
-  place-items: center;
-  color: var(--orange-500);
-  animation: badge-float 6s var(--ease-in-out) infinite;
-  transition: transform 120ms var(--ease-out);
-}
-.hero__badge svg { width: 52px; height: 52px; }
-
-.hero__chip {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.55rem 0.9rem;
-  border-radius: var(--radius-pill);
-  background: rgba(15, 45, 82, 0.72);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--line-on-navy);
-  color: var(--white);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  white-space: nowrap;
-  box-shadow: var(--shadow-md);
-  transition: transform 120ms var(--ease-out);
-}
-.hero__chip svg { width: 17px; height: 17px; color: var(--orange-500); flex: none; }
-
-.hero__chip--clock { top: 6%; right: 4%; animation: chip-float 5.5s var(--ease-in-out) infinite; }
-.hero__chip--shield { bottom: 14%; left: 0; animation: chip-float 6.5s var(--ease-in-out) infinite 0.4s; }
-.hero__chip--wrench {
-  bottom: 2%;
-  right: 12%;
-  width: 44px;
-  height: 44px;
-  padding: 0;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--orange-700);
-  border-color: transparent;
-  color: var(--white);
-  animation: chip-float 5s var(--ease-in-out) infinite 0.2s;
-}
-.hero__chip--wrench svg { width: 20px; height: 20px; color: var(--white); }
-
-@keyframes orb-float {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -10px, 0); }
-}
-@keyframes badge-float {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
-  50% { transform: translate3d(0, -8px, 0) rotate(-2deg); }
-}
-@keyframes chip-float {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -6px, 0); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__orb, .hero__badge, .hero__chip { animation: none; }
-}
 
 /* ============================================================
    Subpage hero (barrio / servicio pages)
