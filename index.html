@@ -19,9 +19,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<link rel="preconnect" href="https://images.unsplash.com">
-<link rel="preload" as="image" href="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=1600&h=900&fit=crop&crop=entropy&q=68&auto=format" fetchpriority="high">
-
 <link rel="stylesheet" href="styles.css">
 
 <script type="application/ld+json">
@@ -168,14 +165,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
 <main id="contenido">
 
   <section class="hero" id="inicio">
-    <img
-      class="hero__photo"
-      src="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=1600&amp;h=900&amp;fit=crop&amp;crop=entropy&amp;q=68&amp;auto=format"
-      srcset="https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=1600&amp;h=900&amp;fit=crop&amp;crop=entropy&amp;q=68&amp;auto=format 1600w, https://images.unsplash.com/photo-1676210134188-4c05dd172f89?w=2400&amp;h=1350&amp;fit=crop&amp;crop=entropy&amp;q=65&amp;auto=format 2400w"
-      sizes="100vw"
-      width="1600" height="900"
-      alt="Fontanero profesional reparando una tubería de agua"
-      fetchpriority="high">
+    <div class="hero__photo" aria-hidden="true"></div>
     <div class="hero__scrim" aria-hidden="true"></div>
     <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
 
@@ -230,12 +220,15 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     <div class="services__grid">
       <article class="service-photo-card service-photo-card--featured">
         <div class="service-photo-card__media">
-          <img
-            src="https://images.unsplash.com/photo-1676210134050-6f12c6898395?w=400&amp;h=300&amp;fit=crop&amp;crop=entropy&amp;q=70&amp;auto=format"
-            srcset="https://images.unsplash.com/photo-1676210134050-6f12c6898395?w=400&amp;h=300&amp;fit=crop&amp;crop=entropy&amp;q=70&amp;auto=format 1x, https://images.unsplash.com/photo-1676210134050-6f12c6898395?w=800&amp;h=600&amp;fit=crop&amp;crop=entropy&amp;q=65&amp;auto=format 2x"
-            width="400" height="300"
-            loading="lazy"
-            alt="Fontanero reparando una avería urgente en un baño">
+          <svg class="service-illustration" viewBox="0 0 400 300" role="img" aria-label="Reloj de urgencias 24 horas con llave inglesa">
+            <circle cx="196" cy="142" r="76" stroke="#ea580c" stroke-width="2.4" fill="none"/>
+            <path d="M196 142V96M196 142l34 20" stroke="#ea580c" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+            <g stroke="#0f2d52" stroke-width="2" stroke-linecap="round" opacity="0.55">
+              <path d="M196 60v14M196 210v14M278 142h-14M114 142h14M251 87l-10 10M141 197l-10 10M251 197l-10-10M141 87l-10-10"/>
+            </g>
+            <path d="M262 196a19 19 0 1 0-24 24 19 19 0 0 0 4-4l-9-9 6-6 9 9a19 19 0 0 0 14-14z" fill="#0f2d52"/>
+            <path d="M255 219l30 30-9 9-30-30" stroke="#0f2d52" stroke-width="2" stroke-linejoin="round" fill="none"/>
+          </svg>
           <span class="service-photo-card__icon">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </span>
@@ -248,12 +241,14 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </article>
       <article class="service-photo-card">
         <div class="service-photo-card__media">
-          <img
-            src="https://images.unsplash.com/photo-1526898943670-92bfa9f94c12?w=400&amp;h=300&amp;fit=crop&amp;crop=entropy&amp;q=70&amp;auto=format"
-            srcset="https://images.unsplash.com/photo-1526898943670-92bfa9f94c12?w=400&amp;h=300&amp;fit=crop&amp;crop=entropy&amp;q=70&amp;auto=format 1x, https://images.unsplash.com/photo-1526898943670-92bfa9f94c12?w=800&amp;h=600&amp;fit=crop&amp;crop=entropy&amp;q=65&amp;auto=format 2x"
-            width="400" height="300"
-            loading="lazy"
-            alt="Tubería con una fuga de agua goteando">
+          <svg class="service-illustration" viewBox="0 0 400 300" role="img" aria-label="Tubería con una grieta y una gota de agua cayendo">
+            <path d="M40 108h150M230 108h130" stroke="#0f2d52" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+            <path d="M40 132h150M230 132h130" stroke="#0f2d52" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+            <path d="M190 108l-8 10 10 6-9 8" stroke="#0f2d52" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <path d="M196 140c9 12 16 22 16 32a16 16 0 0 1-32 0c0-10 7-20 16-32z" fill="#ea580c"/>
+            <ellipse cx="196" cy="228" rx="34" ry="7" stroke="#0f2d52" stroke-width="1.6" fill="none" opacity="0.5"/>
+            <ellipse cx="196" cy="228" rx="52" ry="11" stroke="#0f2d52" stroke-width="1.6" fill="none" opacity="0.3"/>
+          </svg>
           <span class="service-photo-card__icon">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2c3 4 6 7.7 6 11.5A6 6 0 0 1 6 13.5C6 9.7 9 6 12 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
           </span>
@@ -266,12 +261,14 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </article>
       <article class="service-photo-card">
         <div class="service-photo-card__media">
-          <img
-            src="https://images.unsplash.com/photo-1693326416437-083cbfa4ad5b?w=400&amp;h=300&amp;fit=crop&amp;crop=entropy&amp;q=70&amp;auto=format"
-            srcset="https://images.unsplash.com/photo-1693326416437-083cbfa4ad5b?w=400&amp;h=300&amp;fit=crop&amp;crop=entropy&amp;q=70&amp;auto=format 1x, https://images.unsplash.com/photo-1693326416437-083cbfa4ad5b?w=800&amp;h=600&amp;fit=crop&amp;crop=entropy&amp;q=65&amp;auto=format 2x"
-            width="400" height="300"
-            loading="lazy"
-            alt="Desagüe de baño listo para desatascar">
+          <svg class="service-illustration" viewBox="0 0 400 300" role="img" aria-label="Desagüe con rejilla y flujo de agua entrando">
+            <circle cx="200" cy="150" r="82" stroke="#0f2d52" stroke-width="2.4" fill="none"/>
+            <g stroke="#0f2d52" stroke-width="2" stroke-linecap="round" opacity="0.7">
+              <path d="M132 120h136M126 150h148M132 180h136"/>
+            </g>
+            <circle cx="200" cy="150" r="10" fill="#ea580c"/>
+            <path d="M200 46v28M154 60l14 24M246 60l-14 24" stroke="#0f2d52" stroke-width="2" stroke-linecap="round" opacity="0.5" fill="none"/>
+          </svg>
           <span class="service-photo-card__icon">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16M4 12a4 4 0 0 1 4-4M4 12a4 4 0 0 0 4 4M20 12a4 4 0 0 0-4-4M20 12a4 4 0 0 1-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </span>
@@ -284,12 +281,18 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
       </article>
       <article class="service-photo-card">
         <div class="service-photo-card__media">
-          <img
-            src="https://images.unsplash.com/photo-1631048499052-e6d9f305d2c0?w=400&amp;h=300&amp;fit=crop&amp;crop=entropy&amp;q=70&amp;auto=format"
-            srcset="https://images.unsplash.com/photo-1631048499052-e6d9f305d2c0?w=400&amp;h=300&amp;fit=crop&amp;crop=entropy&amp;q=70&amp;auto=format 1x, https://images.unsplash.com/photo-1631048499052-e6d9f305d2c0?w=800&amp;h=600&amp;fit=crop&amp;crop=entropy&amp;q=65&amp;auto=format 2x"
-            width="400" height="300"
-            loading="lazy"
-            alt="Grifo e instalación de fontanería moderna en un baño">
+          <svg class="service-illustration" viewBox="0 0 400 300" role="img" aria-label="Grifo de pared con flujo de agua y llave de instalación">
+            <path d="M160 70h80" stroke="#0f2d52" stroke-width="4" stroke-linecap="round"/>
+            <path d="M200 70v46" stroke="#0f2d52" stroke-width="3" stroke-linecap="round"/>
+            <path d="M200 116c40 0 46 20 46 34" stroke="#0f2d52" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <circle cx="164" cy="94" r="12" fill="#ea580c"/>
+            <path d="M176 94h18" stroke="#ea580c" stroke-width="3" stroke-linecap="round"/>
+            <g stroke="#0f2d52" stroke-width="2" stroke-linecap="round" opacity="0.55">
+              <path d="M246 158v20M240 154v14M252 154v14"/>
+            </g>
+            <path d="M244 178c5 8 9 15 9 22a9 9 0 0 1-18 0c0-7 4-14 9-22z" fill="#0f2d52" opacity="0.85"/>
+            <path d="M110 210a3 3 0 1 0 0-6 3 3 0 0 0-6 0 3 3 0 1 0 6 6zM120 200l16-16-3-3-16 16z" stroke="#0f2d52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.5"/>
+          </svg>
           <span class="service-photo-card__icon">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 12h8M12 8v8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </span>
